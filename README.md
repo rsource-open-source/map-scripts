@@ -15,7 +15,9 @@ lol just dm me it and i'll add it.
 <details>
 <summary>Pull Request (GitHub account required + complicated for new users)</summary>
 <br>
-Read on how to pull request.
+Read on how to fork and make pull request.
+
+https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/about-forks
 
 https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 </details>
