@@ -20,6 +20,9 @@ Read on how to fork and make pull request.
 https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/about-forks
 
 https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+
+## Why would I do this?
+So you can appear on the contributors list.
 </details>
 
 <details>
