@@ -23,6 +23,7 @@ https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-cha
 
 ## Why would I do this?
 So you can appear on the contributors list.
+(you also get swag points owo)
 </details>
 
 <details>
