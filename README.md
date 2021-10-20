@@ -9,7 +9,7 @@ There are a list of ways you can do this, but out of these, do what is the easie
 <details>
 <summary>Submit via Discord Dms!</summary>
 <br>
-lol just dm me it and i'll add it.
+Join the rsource discord: https://rsource.rqft.space/
 </details>
 
 <details>
@@ -21,7 +21,7 @@ https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-
 
 https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
-## Why would I do this?
+### Why would I do this?
 So you can appear on the contributors list.
 </details>
 
@@ -32,3 +32,20 @@ You can submit in the IDKHTPR channel!
 
 https://github.com/rsource-open-source/map-scripts/discussions/categories/idkhtpr-submit-scripts-here
 </details>
+
+## [roblox-ts](https://github.com/roblox-ts/roblox-ts) & [Luau](https://luau-lang.org/) Support
+Some developers might choose to use a roblox-ts environment and use the distributed/compiled lua. This is fully supported as you can submit a [PR](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) like the following:
+```
+*/
+└── {map_name}/
+    ├── src/
+    │   └── *.ts
+    └── dist/
+        └── *.lua
+```
+Where `*` is any of the top directory folders except `.github`.
+
+<!--
+## Use of [StyLua](https://github.com/JohnnyMorganz/StyLua) (and the GitHub Action [stylua-action](https://github.com/JohnnyMorganz/stylua-action)
+When a commit is pushed or a pull request is made,
+-->
