@@ -1,14 +1,8 @@
 name: format
 on:
   push:
-    paths-ignore:
-      - ".github/**"
-      - "*.md"
     branches: "**"
   pull_request:
-    paths-ignore:
-      - ".github/**"
-      - "*.md"
     branches: "**"
 jobs:
   stylua:
