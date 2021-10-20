@@ -13,16 +13,14 @@ jobs: # Future: Linting?
         uses: JohnnyMorganz/stylua-action@1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          # CLI arguments
-          args: --config-path=./.stylua.toml -g **/*.lua -- . # -g ./maps/*.lua
-          # Specify `version` to pin a specific version, otherwise action will always use latest version/automatically update
+          args: --config-path=./.stylua.toml -g **/*.lua -- .
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Actions [StyLua]"
           if [[ ! -z $(git status -s) ]]; then
             git add .
-            git commit -m "chore: format source code"
+            git commit -m "CI: StyLua Formatting"
           fi
       - name: Push formatted files
         uses: ad-m/github-push-action@master
