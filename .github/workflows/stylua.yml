@@ -2,12 +2,10 @@ name: StyLua
 on:
   push:
     branches:
-    - master
-    - test-actions
+    - main
   pull_request:
     branches:
-    - master
-    - test-actions
+    - main
 jobs:
   test:
     runs-on: ubuntu-latest
