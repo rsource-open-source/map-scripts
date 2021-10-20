@@ -1,11 +1,11 @@
-name: format
+name: CI
 on:
   push:
     branches: "**"
   pull_request:
     branches: "**"
-jobs:
-  stylua:
+jobs: # Future: Linting?
+  Format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,7 +14,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # CLI arguments
-          args: --config-path=./.stylua -g ./lighting/*.lua # -g ./maps/*.lua
+          args: --config-path=./.stylua --check ./lighting/*.lua # -g ./maps/*.lua
           # Specify `version` to pin a specific version, otherwise action will always use latest version/automatically update
       - name: Commit files
         run: |
