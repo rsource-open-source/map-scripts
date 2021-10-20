@@ -14,7 +14,7 @@ jobs: # Future: Linting?
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # CLI arguments
-          args: --config-path=./.stylua --check ./lighting/*.lua # -g ./maps/*.lua
+          args: --config-path=./.stylua.toml -g **/*.lua -- . # -g ./maps/*.lua
           # Specify `version` to pin a specific version, otherwise action will always use latest version/automatically update
       - name: Commit files
         run: |
