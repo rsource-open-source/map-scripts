@@ -1,4 +1,4 @@
-name: StyLua
+name: format
 on:
   push:
     paths-ignore:
@@ -11,11 +11,11 @@ on:
       - "*.md"
     branches: "**"
 jobs:
-  test:
+  stylua:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: StyLua
+      - name: Setup and run StyLua
         uses: JohnnyMorganz/stylua-action@1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
