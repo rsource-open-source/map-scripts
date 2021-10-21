@@ -25,7 +25,7 @@ jobs: # Future: Linting?
       - name: Run Prettier
         uses: actionsx/prettier@v2
         with:
-          args: --check '**/*.ts'
+          args: --list-different '**/*.ts'
       - name: Commit Prettier files
         run: |
           if [[ ! -z $(git status -s) ]]; then
