@@ -32,7 +32,7 @@ jobs: # Future: Linting?
       - name: Prettier Action
         uses: creyD/prettier_action@v4.0
         with: 
-          prettier_options: --write '**/*.ts'
+          prettier_options: --write **/*.ts
           commit_message: "CI: Prettier Formatting"
 #      - name: Run Prettier
 #        uses: actionsx/prettier@v2
