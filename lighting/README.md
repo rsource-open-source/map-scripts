@@ -14,7 +14,7 @@ This can also be retrieved by doing the following, as the [strafes.net wiki](htt
 ```lua
 local Lighting = game.Lighting
 ```
-Discussion for which method of lighting retrival that is better is absent; either way works.
+Debate for the prefered method of lighting reterival is absent; either way works.
 
 ## Game Settings
 As of 10/15/2021, both games use the [`Shadowmap`](https://devforum.roblox.com/t/future-vs-shadowmap/658587) lighting technology. Quaternions has no plans to turn the games to Future lighting. Shadowmap is the default lighting; the strafes.net wikipedia mentions on how to revert back to this if edited previously:
