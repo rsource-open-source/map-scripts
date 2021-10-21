@@ -9,6 +9,8 @@ jobs: # Future: Linting?
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Run StyLua
         uses: JohnnyMorganz/stylua-action@1.0.0
         with:
@@ -16,12 +18,22 @@ jobs: # Future: Linting?
           args: --config-path=./.stylua.toml -g **/*.lua -- .
       - name: Commit StyLua files
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions [Format]"
           if [[ ! -z $(git status -s) ]]; then
             git add .
             git commit -m "CI: StyLua Formatting" -m "For ignoring parts of a file, see https://github.com/JohnnyMorganz/StyLua#ignoring-parts-of-a-file. For ignoring entire files, see https://github.com/JohnnyMorganz/StyLua#filtering-using-styluaignore. Using Glob to filter files, see https://github.com/JohnnyMorganz/StyLua#glob-filtering. Glob tester online (regex and lau pattern like): https://globster.xyz/"
           fi
+      - name: Push formatted StyLua files
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - name: Prettier Action
+        uses: creyD/prettier_action@v4.0
+        with: 
+          prettier-options: --write '**/*.ts'
+          commit-message: "CI: Prettier Formatting"
 #      - name: Run Prettier
 #        uses: actionsx/prettier@v2
 #        with:
@@ -32,9 +44,3 @@ jobs: # Future: Linting?
 #            git add .
 #            git commit -m "CI: Prettier Formatting" -m "For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html."
 #          fi
-      - name: Push formatted files
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-
