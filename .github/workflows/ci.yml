@@ -10,7 +10,7 @@ jobs: # Future: Linting?
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.ref }}
       - name: Run StyLua
         uses: JohnnyMorganz/stylua-action@1.0.0
         with:
