@@ -39,7 +39,7 @@ jobs: # Future: Linting?
         uses: creyD/prettier_action@v4.0
         with: 
           prettier_options: --write **/*.ts
-          commit_message: "CI: Prettier Formatting"
+          commit_message: 'CI: Prettier Formatting" -m "For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html."'
 #      - name: Run Prettier
 #        uses: actionsx/prettier@v2
 #        with:
