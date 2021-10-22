@@ -36,17 +36,8 @@ jobs: # Future: Linting?
         with:
           ref: ${{ github.head_ref }}
       - name: Prettier Action
-        uses: creyD/prettier_action@v4.0
+        uses: creyD/prettier_action@dev
         with: 
           prettier_options: --write **/*.ts
-          commit_message: 'CI: Prettier Formatting" -m "For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html."'
-#      - name: Run Prettier
-#        uses: actionsx/prettier@v2
-#        with:
-#          args: --list-different '**/*.ts'
-#      - name: Commit Prettier files
-#        run: |
-#          if [[ ! -z $(git status -s) ]]; then
-#            git add .
-#            git commit -m "CI: Prettier Formatting" -m "For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html."
-#          fi
+          commit_message: 'CI: Prettier Formatting'
+          commit_description: 'For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html.'
