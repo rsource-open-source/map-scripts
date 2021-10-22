@@ -45,7 +45,5 @@ Some developers might choose to use a roblox-ts environment and use the distribu
 ```
 Where `*` is any of the top directory folders except `.github`.
 
-<!--
-## Use of [StyLua](https://github.com/JohnnyMorganz/StyLua) (and the GitHub Action [stylua-action](https://github.com/JohnnyMorganz/stylua-action)
-When a commit is pushed or a pull request is made,
--->
+## Use of [StyLua](https://github.com/JohnnyMorganz/StyLua), [Prettier](https://github.com/prettier/prettier), and the GitHub Actions: [stylua-action](https://github.com/JohnnyMorganz/stylua-action), [prettier-action](https://github.com/creyD/prettier_action)
+When a commit is pushed (main branch and fork branch) or a pull request is made, StyLua and Prettier will automatically run and format commited code. If you would like to use this as you work on the PR, open a pull request draft, that's it! GitHub actions will check the forked repo on every push. See the commits messages to see how you can disabled these github action checks and pushing them to the branch.
