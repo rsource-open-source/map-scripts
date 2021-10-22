@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: "**"
 jobs: # Future: Linting?
-  Format:
+  Stylua:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,6 +29,12 @@ jobs: # Future: Linting?
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+  Prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Prettier Action
         uses: creyD/prettier_action@v4.0
         with: 
