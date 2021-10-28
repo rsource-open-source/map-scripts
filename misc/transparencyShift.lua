@@ -15,34 +15,34 @@ local function transparencyShift(targetTransparencyShiftTo, elapsedTimeLength, e
 	
 	]]
 
-	-- optional arguments parsing
+  -- optional arguments parsing
 
-	if easingStyle == nil then
-		easingStyle = 'Linear'
-	end
-	
-	-- return values
+  if easingStyle == nil then
+    easingStyle = 'Linear'
+  end
 
-	local numberLimits = 'parameter must be equal to or lower than 1 AND equal to or higher than 0, type passed: '
-	local typeNum = 'parameter should be a number'
+  -- return values
 
-	-- type checking
+  local numberLimits = 'parameter must be equal to or lower than 1 AND equal to or higher than 0, type passed: '
+  local typeNum = 'parameter should be a number'
 
-	assert(
-		type(targetTransparencyShiftTo) == 'number',
-		'targetTransparencyShiftTo' .. typeNum .. type(targetTransparencyShiftTo)
-	)
-	assert(targetTransparencyShiftTo > 1 or targetTransparencyShiftTo < 0, 'targetTransparencyShiftTo' .. numberLimits)
-	assert(type(elapsedTimeLength) == 'number', 'elapsedTimeLength' .. typeNum .. type(targetTransparencyShiftTo))
+  -- type checking
 
-	-- code
-	
-	game
-	:GetService('TweenService')
-	:Create(
-		(part == nil and script.Parent or part),
-		TweenInfo.new(elapsedTimeLength, Enum.EasingStyle[easingStyle], Enum.EasingDirection.Out, 0, false, 0),
-		{ Transparency = targetTransparencyShiftTo }
-	)
-	:Play()
+  assert(
+    type(targetTransparencyShiftTo) == 'number',
+    'targetTransparencyShiftTo' .. typeNum .. type(targetTransparencyShiftTo)
+  )
+  assert(targetTransparencyShiftTo > 1 or targetTransparencyShiftTo < 0, 'targetTransparencyShiftTo' .. numberLimits)
+  assert(type(elapsedTimeLength) == 'number', 'elapsedTimeLength' .. typeNum .. type(targetTransparencyShiftTo))
+
+  -- code
+
+  game
+    :GetService('TweenService')
+    :Create(
+      (part == nil and script.Parent or part),
+      TweenInfo.new(elapsedTimeLength, Enum.EasingStyle[easingStyle], Enum.EasingDirection.Out, 0, false, 0),
+      { Transparency = targetTransparencyShiftTo }
+    )
+    :Play()
 end
