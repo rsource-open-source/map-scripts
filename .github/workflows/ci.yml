@@ -20,6 +20,7 @@ jobs: # Future: Linting?
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions [Format]"
+          git pull
           if [[ ! -z $(git status -s) ]]; then
             git add .
             git commit -m "CI: StyLua Formatting" -m "For ignoring parts of a file, see https://github.com/JohnnyMorganz/StyLua#ignoring-parts-of-a-file. For ignoring entire files, see https://github.com/JohnnyMorganz/StyLua#filtering-using-styluaignore. Using Glob to filter files, see https://github.com/JohnnyMorganz/StyLua#glob-filtering. Glob tester online (regex and lau pattern like): https://globster.xyz/"
@@ -29,15 +30,15 @@ jobs: # Future: Linting?
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.head_ref }}
-  Prettier:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-      - name: Prettier Action
-        uses: creyD/prettier_action@dev
-        with: 
-          prettier_options: --write **/*.ts
-          commit_message: 'CI: Prettier Formatting'
-          commit_description: 'For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html.'
+#  Prettier:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          ref: ${{ github.head_ref }}
+#      - name: Prettier Action
+#        uses: creyD/prettier_action@dev
+#        with: 
+#          prettier_options: --write **/*.ts
+#          commit_message: 'CI: Prettier Formatting'
+#          commit_description: 'For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html.'
