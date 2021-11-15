@@ -8,5 +8,5 @@ local Clouds = Instance.new('Clouds')
 -- Example
 Clouds.Parent = game.Workspace.Terrain
 Clouds.Color = Color3.fromRGB(255, 255, 255)
-Clouds.Cover = .625
+Clouds.Cover = 0.625
 Clouds.Density = 1
