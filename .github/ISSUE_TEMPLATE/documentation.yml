@@ -11,10 +11,9 @@ body:
   - type: textarea
     id: info
     attributes:
-      label: "Where is this report relevant to? What should be changed?"
-      description: "Also tell us, what do you think it should be changed to?"
+      label: "Where is this report relevant to? What should be changed and what to?"
+      description: "Pro tip: use [Github Permalink Snippets](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet)"
       placeholder: "Under which directory; which file?"
-      value: "In directory x, in file y, line z; a should be changed to b"
     validations:
       required: true
   - type: textarea
