@@ -4,7 +4,7 @@ on:
     branches: "**"
   pull_request:
     branches: "**"
-jobs: # Future: Linting?
+jobs:
   Stylua:
     runs-on: ubuntu-latest
     steps:
@@ -23,22 +23,30 @@ jobs: # Future: Linting?
           git pull
           if [[ ! -z $(git status -s) ]]; then
             git add .
-            git commit -m "CI: StyLua Formatting" -m "For ignoring parts of a file, see https://github.com/JohnnyMorganz/StyLua#ignoring-parts-of-a-file. For ignoring entire files, see https://github.com/JohnnyMorganz/StyLua#filtering-using-styluaignore. Using Glob to filter files, see https://github.com/JohnnyMorganz/StyLua#glob-filtering. Glob tester online (regex and lau pattern like): https://globster.xyz/"
+            git commit -m "CI: StyLua Formatting" -m "For ignoring parts of a file, see https://github.com/JohnnyMorganz/StyLua#ignoring-parts-of-a-file. For ignoring entire files, see https://github.com/JohnnyMorganz/StyLua#filtering-using-styluaignore."
           fi
       - name: Push formatted StyLua files
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-#  Prettier:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          ref: ${{ github.head_ref }}
-#      - name: Prettier Action
-#        uses: creyD/prettier_action@dev
-#        with: 
-#          prettier_options: --write **/*.ts
-#          commit_message: 'CI: Prettier Formatting'
-#          commit_description: 'For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html.'
+  LuaCheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Run LuaCheck
+        uses: nebularg/actions-luacheck@v1.1.0
+  Prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Prettier Action
+        uses: creyD/prettier_action@v4.1.1
+        with: 
+          prettier_options: --write **/*.ts
+          commit_message: 'CI: Prettier Formatting'
+          commit_description: 'For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html.'
