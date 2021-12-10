@@ -1,3 +1,4 @@
+-- selene: allow(unused_variable)
 local Lighting = game:GetService('Lighting')
 --[[
 or
