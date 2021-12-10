@@ -46,7 +46,7 @@ function SwayPart(part)
 end
 
 -- operate
-for i, v in pairs(targetDir:GetChildren()) do
+for _, v in pairs(targetDir:GetChildren()) do
   if v:IsA('BasePart') then
     SwayPart(v)
   end
