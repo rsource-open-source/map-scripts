@@ -1,6 +1,6 @@
 name: Update Roblox Standard Library
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 jobs:
   Selene:
     runs-on: ubuntu-latest
