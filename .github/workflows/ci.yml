@@ -1,0 +1,54 @@
+name: CI
+on:
+  push:
+    branches: "**"
+  pull_request:
+    branches: "**"
+jobs:
+  Selene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: selene-linter
+        uses: NTBBloodbath/selene-action@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: ". --config selene.toml --pattern **/!(dist)/*.lua"
+          version: 0.15.0
+  Stylua:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Run StyLua
+        uses: JohnnyMorganz/stylua-action@1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --config-path=./stylua.toml -g **/*.lua -- .
+      - name: Commit StyLua files
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions [Format]"
+          git pull
+          if [[ ! -z $(git status -s) ]]; then
+            git add .
+            git commit -m "CI: StyLua Formatting" -m "For ignoring parts of a file, see https://github.com/JohnnyMorganz/StyLua#ignoring-parts-of-a-file. For ignoring entire files, see https://github.com/JohnnyMorganz/StyLua#filtering-using-styluaignore."
+          fi
+      - name: Push formatted StyLua files
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+  Prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Prettier Action
+        uses: creyD/prettier_action@v4.1.1
+        with: 
+          prettier_options: --write **/*.ts
+          commit_message: 'CI: Prettier Formatting'
+          commit_description: 'For information about ignoring files and parts of a file, see https://prettier.io/docs/en/ignore.html.'

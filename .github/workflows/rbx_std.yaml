@@ -1,0 +1,14 @@
+name: Update Roblox Standard Library
+on:
+  workflow_dispatch:
+jobs:
+  Selene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate Roblox Standard Library
+        uses: NTBBloodbath/selene-action@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: generate-roblox-std
+          version: 0.15.0

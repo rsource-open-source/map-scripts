@@ -1,0 +1,25 @@
+name: Documentation Error/Edit Report
+description: File a documentation error or suggestion
+title: "[documentation]: "
+labels: ["documentation"]
+assignees:
+  - insyri
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for taking the time to fill out this report!"
+  - type: textarea
+    id: info
+    attributes:
+      label: "Where is this report relevant to? What should be changed and what to?"
+      description: "Pro tip: use [Github Permalink Snippets](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet)"
+      placeholder: "Under which directory; which file?"
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional information"
+      description: "What else should we know?"
+    validations:
+      required: false
