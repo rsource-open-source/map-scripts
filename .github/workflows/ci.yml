@@ -13,7 +13,7 @@ jobs:
         uses: NTBBloodbath/selene-action@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          args: "**/!(dist)/*.lua" # can't do subdirs in dist folders
+          args: "**/*.lua"
           version: 0.15.0
   Stylua:
     runs-on: ubuntu-latest
