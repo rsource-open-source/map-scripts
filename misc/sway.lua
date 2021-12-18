@@ -37,10 +37,8 @@ function SwayPart(part)
 			local _, isOnScreen = curCam:WorldToViewportPoint(part.Position)
 			if ((curCam.CFrame.p - part.Position).Magnitude <= distance) and isOnScreen then
 				local T = tick()
-				local x = (math.sin(T + (pos.x / amps[part.Name][1])) * math.sin(T / amps[part.Name][2]))
-					/ amps[part.Name][1]
-				local z = (math.sin(T + (pos.z / amps[part.Name][1])) * math.sin(T / amps[part.Name][2]))
-					/ amps[part.Name][1]
+				local x = (math.sin(T + (pos.x / amps[part.Name][1])) * math.sin(T / amps[part.Name][2])) / amps[part.Name][1]
+				local z = (math.sin(T + (pos.z / amps[part.Name][1])) * math.sin(T / amps[part.Name][2])) / amps[part.Name][1]
 				part.CFrame = (PartCF + Vector3.new(x, 0, z)) * CFrame.Angles(z / tall, 0, x / -tall)
 			end
 		end)
