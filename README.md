@@ -1,13 +1,8 @@
-```
-                                               _       __      
-   ____ ___  ____ _____        _______________(_)___  / /______
-  / __ `__ \/ __ `/ __ \______/ ___/ ___/ ___/ / __ \/ __/ ___/
- / / / / / / /_/ / /_/ /_____(__  ) /__/ /  / / /_/ / /_(__  ) 
-/_/ /_/ /_/\__,_/ .___/     /____/\___/_/  /_/ .___/\__/____/  
-               /_/                          /_/                
-```
 # map-scripts
-Collection of Roblox Lua scripts for making maps for the Roblox Bhop / Surf game. Submissions to this repository are welcome, see how below.
+A collection of Roblox Lua scripts for making maps for the Roblox Bhop / Surf game. Submissions to this repository are welcome, see how to below.
+
+## ⚠ Notice
+This is not actively being worked on and has been temporarily been discontinued.
 
 ## Discussions existence
 For GitHub users, we have [discussions](https://github.com/rsource-open-source/map-scripts/discussions) enabled! If you don't know, it's basically a forum based around this repository!
